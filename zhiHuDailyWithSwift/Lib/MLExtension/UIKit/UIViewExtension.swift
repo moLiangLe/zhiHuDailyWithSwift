@@ -1,14 +1,14 @@
 //
-//  File.swift
-//  zhiHuDailyWithSwift
+//  UIViewExtension.swift
+//  MLExtension
 //
-//  Created by LCL on 16/5/11.
-//  Copyright © 2016年 moliang. All rights reserved.
+//  Created by LCL on 15/12/2.
+//  Copyright © 2015年 lclpro. All rights reserved.
 //
 
 import UIKit
 
-extension UIView {
+extension UIView{
     
     /**
      Create a snapshot image of the complete view hierarchy.
@@ -41,30 +41,30 @@ extension UIView {
         return NSData()
     }
     
-    //    - (NSData *)snapshotPDF {
-    //    CGRect bounds = self.bounds;
-    //    NSMutableData* data = [NSMutableData data];
-    //    CGDataConsumerRef consumer = CGDataConsumerCreateWithCFData((__bridge CFMutableDataRef)data);
-    //    CGContextRef context = CGPDFContextCreate(consumer, &bounds, NULL);
-    //    CGDataConsumerRelease(consumer);
-    //    if (!context) return nil;
-    //    CGPDFContextBeginPage(context, NULL);
-    //    CGContextTranslateCTM(context, 0, bounds.size.height);
-    //    CGContextScaleCTM(context, 1.0, -1.0);
-    //    [self.layer renderInContext:context];
-    //    CGPDFContextEndPage(context);
-    //    CGPDFContextClose(context);
-    //    CGContextRelease(context);
-    //    return data;
-    //    }
+//    - (NSData *)snapshotPDF {
+//    CGRect bounds = self.bounds;
+//    NSMutableData* data = [NSMutableData data];
+//    CGDataConsumerRef consumer = CGDataConsumerCreateWithCFData((__bridge CFMutableDataRef)data);
+//    CGContextRef context = CGPDFContextCreate(consumer, &bounds, NULL);
+//    CGDataConsumerRelease(consumer);
+//    if (!context) return nil;
+//    CGPDFContextBeginPage(context, NULL);
+//    CGContextTranslateCTM(context, 0, bounds.size.height);
+//    CGContextScaleCTM(context, 1.0, -1.0);
+//    [self.layer renderInContext:context];
+//    CGPDFContextEndPage(context);
+//    CGPDFContextClose(context);
+//    CGContextRelease(context);
+//    return data;
+//    }
     
     /**
-     Shortcut to set the view.layer's shadow
-     
-     @param color  Shadow Color
-     @param offset Shadow offset
-     @param radius Shadow radius
-     */
+    Shortcut to set the view.layer's shadow
+    
+    @param color  Shadow Color
+    @param offset Shadow offset
+    @param radius Shadow radius
+    */
     func setLayerShadow(color:UIColor, offset:CGSize, radius:CGFloat) {
         self.layer.shadowColor = color.CGColor
         self.layer.shadowOffset = offset
@@ -86,49 +86,49 @@ extension UIView {
             }
         }
     }
-    //
-    //    func viewController() -> UIViewController {
-    //        for (var view = self; view; view = view.superview){
-    //            let nextResponde = view.nextResponder()
-    //            if let nextResponde = nextResponde.isKindOfClass(UIViewController.self){
-    //                return nextResponde;
-    //            }
-    //        }
-    //    }
+//    
+//    func viewController() -> UIViewController {
+//        for (var view = self; view; view = view.superview){
+//            let nextResponde = view.nextResponder()
+//            if let nextResponde = nextResponde.isKindOfClass(UIViewController.self){
+//                return nextResponde;
+//            }
+//        }
+//    }
     
-    //    func visibleAlpha() -> CGFloat{
-    //        if self.isKindOfClass(UIWindow.self) {
-    //            return self.hidden ? 0 : self.alpha
-    //        }
-    //        guard let _ = self.window else{
-    //            return 0
-    //        }
-    //        var alpha:CGFloat = 1
-    //        var view = self
-    //        while(view != nil){
-    //            if view.hidden {
-    //                alpha = 0
-    //                break
-    //            }
-    //            alpha
-    //        }
-    //    }
+//    func visibleAlpha() -> CGFloat{
+//        if self.isKindOfClass(UIWindow.self) {
+//            return self.hidden ? 0 : self.alpha
+//        }
+//        guard let _ = self.window else{
+//            return 0
+//        }
+//        var alpha:CGFloat = 1
+//        var view = self
+//        while(view != nil){
+//            if view.hidden {
+//                alpha = 0
+//                break
+//            }
+//            alpha
+//        }
+//    }
     
-    //    func convertPoint(point:CGPoint, toViewOrWindow view:UIView?) -> CGPoint {
-    //        guard let view = view else{
-    //            if self.isKindOfClass(UIWindow.self) {
-    //                return self.convertPoint(point, toView: nil)
-    //            } else {
-    //                return self.convertPoint(point, toView: nil)
-    //            }
-    //        }
-    //
-    //        let from = self.isKindOfClass(UIWindow.self) ? self : self.window!
-    //        let to = view.isKindOfClass(UIWindow.self) ? view : view.window!
-    //        if (!from || !to) || (from == to) {
-    //
-    //        }
-    //    }
+//    func convertPoint(point:CGPoint, toViewOrWindow view:UIView?) -> CGPoint {
+//        guard let view = view else{
+//            if self.isKindOfClass(UIWindow.self) {
+//                return self.convertPoint(point, toView: nil)
+//            } else {
+//                return self.convertPoint(point, toView: nil)
+//            }
+//        }
+//        
+//        let from = self.isKindOfClass(UIWindow.self) ? self : self.window!
+//        let to = view.isKindOfClass(UIWindow.self) ? view : view.window!
+//        if (!from || !to) || (from == to) {
+//            
+//        }
+//    }
     
     ///< Shortcut for frame.origin.x.
     var left:CGFloat{
@@ -236,5 +236,4 @@ extension UIView {
             self.frame = frame
         }
     }
-    
 }
