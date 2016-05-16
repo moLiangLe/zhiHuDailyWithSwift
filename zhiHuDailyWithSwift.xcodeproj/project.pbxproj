@@ -10,8 +10,6 @@
 		206DFC1147A1ECA49D7351FD /* Pods_zhiHuDailyWithSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAEEC2946AC356927CD2B65 /* Pods_zhiHuDailyWithSwift.framework */; };
 		6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6771455A1CE376FA000E1ACD /* MLCycleScrollView.swift */; };
 		67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDC83F1CE369E6006BB24B /* AppDelegate.swift */; };
-		67CDC8421CE369E6006BB24B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDC8411CE369E6006BB24B /* ViewController.swift */; };
-		67CDC8451CE369E6006BB24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CDC8431CE369E6006BB24B /* Main.storyboard */; };
 		67CDC8471CE369E6006BB24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CDC8461CE369E6006BB24B /* Assets.xcassets */; };
 		67CDC84A1CE369E6006BB24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CDC8481CE369E6006BB24B /* LaunchScreen.storyboard */; };
 		67D4EF601CE4B9FA00DF4E6C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF5F1CE4B9FA00DF4E6C /* HomeViewController.swift */; };
@@ -26,6 +24,9 @@
 		67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */; };
 		67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */; };
 		67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */; };
+		7E11EA961CE96F4B00F41C3D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA951CE96F4B00F41C3D /* HomeViewCell.swift */; };
+		7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */; };
+		7E11EAA21CE9A17000F41C3D /* HomeViewLogicLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EAA11CE9A17000F41C3D /* HomeViewLogicLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,6 @@
 		6771455A1CE376FA000E1ACD /* MLCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLCycleScrollView.swift; sourceTree = "<group>"; };
 		67CDC83C1CE369E6006BB24B /* zhiHuDailyWithSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhiHuDailyWithSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CDC83F1CE369E6006BB24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67CDC8411CE369E6006BB24B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		67CDC8441CE369E6006BB24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67CDC8461CE369E6006BB24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67CDC8491CE369E6006BB24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67CDC84B1CE369E6006BB24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,9 @@
 		67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		7E11EA951CE96F4B00F41C3D /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBaseViewModel.swift; sourceTree = "<group>"; };
+		7E11EAA11CE9A17000F41C3D /* HomeViewLogicLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewLogicLayer.swift; sourceTree = "<group>"; };
 		BA40336C6420D3D61A97BC13 /* Pods-zhiHuDailyWithSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhiHuDailyWithSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhiHuDailyWithSwift/Pods-zhiHuDailyWithSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		677145561CE374DF000E1ACD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				7E11EA9E1CE99F4B00F41C3D /* MLBaseViewModel */,
 				67D4EF781CE4BAEB00DF4E6C /* MLExtension */,
 				677145591CE376E6000E1ACD /* CycleScrollView */,
 			);
@@ -116,8 +119,6 @@
 				67D4EF5C1CE4B9AA00DF4E6C /* Home */,
 				67CDC83F1CE369E6006BB24B /* AppDelegate.swift */,
 				67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */,
-				67CDC8411CE369E6006BB24B /* ViewController.swift */,
-				67CDC8431CE369E6006BB24B /* Main.storyboard */,
 				67CDC8461CE369E6006BB24B /* Assets.xcassets */,
 				67CDC8481CE369E6006BB24B /* LaunchScreen.storyboard */,
 				67CDC84B1CE369E6006BB24B /* Info.plist */,
@@ -128,6 +129,7 @@
 		67D4EF5C1CE4B9AA00DF4E6C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7E11EA971CE9728400F41C3D /* ViewModel */,
 				67D4EF5D1CE4B9AA00DF4E6C /* Controller */,
 				67D4EF5E1CE4B9AA00DF4E6C /* View */,
 			);
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				67D4EF5F1CE4B9FA00DF4E6C /* HomeViewController.swift */,
+				7E11EAA11CE9A17000F41C3D /* HomeViewLogicLayer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 		67D4EF5E1CE4B9AA00DF4E6C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E11EA951CE96F4B00F41C3D /* HomeViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +193,22 @@
 				BA40336C6420D3D61A97BC13 /* Pods-zhiHuDailyWithSwift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E11EA971CE9728400F41C3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			path = zhiHuDailyWithSwift/Home/ViewModel;
+			sourceTree = SOURCE_ROOT;
+		};
+		7E11EA9E1CE99F4B00F41C3D /* MLBaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */,
+			);
+			path = MLBaseViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +274,6 @@
 			files = (
 				67CDC84A1CE369E6006BB24B /* LaunchScreen.storyboard in Resources */,
 				67CDC8471CE369E6006BB24B /* Assets.xcassets in Resources */,
-				67CDC8451CE369E6006BB24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,14 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67CDC8421CE369E6006BB24B /* ViewController.swift in Sources */,
+				7E11EA961CE96F4B00F41C3D /* HomeViewCell.swift in Sources */,
 				67D4EF8B1CE4BAEB00DF4E6C /* UITextFieldExtension.swift in Sources */,
 				6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */,
 				67D4EF841CE4BAEB00DF4E6C /* StringExtension.swift in Sources */,
 				67D4EF871CE4BAEB00DF4E6C /* UIColorExtension.swift in Sources */,
 				67D4EF851CE4BAEB00DF4E6C /* UIBezierPathExtension.swift in Sources */,
 				67D4EF8A1CE4BAEB00DF4E6C /* UITableViewExtension.swift in Sources */,
+				7E11EAA21CE9A17000F41C3D /* HomeViewLogicLayer.swift in Sources */,
 				67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */,
+				7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */,
 				67D4EF891CE4BAEB00DF4E6C /* UIScrollViewExtension.swift in Sources */,
 				67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */,
 				67D4EF881CE4BAEB00DF4E6C /* UIImageExtension.swift in Sources */,
@@ -334,14 +355,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		67CDC8431CE369E6006BB24B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67CDC8441CE369E6006BB24B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		67CDC8481CE369E6006BB24B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zhiHuDailyWithSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcl.zhiHuDailyWithSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zhiHuDailyWithSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcl.zhiHuDailyWithSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
