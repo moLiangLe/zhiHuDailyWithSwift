@@ -27,6 +27,9 @@
 		7E11EA961CE96F4B00F41C3D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA951CE96F4B00F41C3D /* HomeViewCell.swift */; };
 		7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */; };
 		7E11EAA21CE9A17000F41C3D /* HomeViewLogicLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EAA11CE9A17000F41C3D /* HomeViewLogicLayer.swift */; };
+		7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */; };
+		7E9DDF4F1CEAF9E400ACE1CD /* HomeViewNetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF4E1CEAF9E400ACE1CD /* HomeViewNetHelper.swift */; };
+		7E9DDF521CEB0B1000ACE1CD /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		7E11EA951CE96F4B00F41C3D /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBaseViewModel.swift; sourceTree = "<group>"; };
 		7E11EAA11CE9A17000F41C3D /* HomeViewLogicLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewLogicLayer.swift; sourceTree = "<group>"; };
+		7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7E9DDF4E1CEAF9E400ACE1CD /* HomeViewNetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewNetHelper.swift; sourceTree = "<group>"; };
+		7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		BA40336C6420D3D61A97BC13 /* Pods-zhiHuDailyWithSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhiHuDailyWithSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhiHuDailyWithSwift/Pods-zhiHuDailyWithSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +135,8 @@
 		67D4EF5C1CE4B9AA00DF4E6C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7E9DDF501CEB0B1000ACE1CD /* Model */,
+				7E9DDF4D1CEAF9BA00ACE1CD /* NetHelper */,
 				7E11EA971CE9728400F41C3D /* ViewModel */,
 				67D4EF5D1CE4B9AA00DF4E6C /* Controller */,
 				67D4EF5E1CE4B9AA00DF4E6C /* View */,
@@ -198,6 +206,7 @@
 		7E11EA971CE9728400F41C3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */,
 			);
 			name = ViewModel;
 			path = zhiHuDailyWithSwift/Home/ViewModel;
@@ -209,6 +218,22 @@
 				7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */,
 			);
 			path = MLBaseViewModel;
+			sourceTree = "<group>";
+		};
+		7E9DDF4D1CEAF9BA00ACE1CD /* NetHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7E9DDF4E1CEAF9E400ACE1CD /* HomeViewNetHelper.swift */,
+			);
+			path = NetHelper;
+			sourceTree = "<group>";
+		};
+		7E9DDF501CEB0B1000ACE1CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E11EA961CE96F4B00F41C3D /* HomeViewCell.swift in Sources */,
+				7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */,
 				67D4EF8B1CE4BAEB00DF4E6C /* UITextFieldExtension.swift in Sources */,
 				6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */,
 				67D4EF841CE4BAEB00DF4E6C /* StringExtension.swift in Sources */,
@@ -340,6 +366,7 @@
 				67D4EF851CE4BAEB00DF4E6C /* UIBezierPathExtension.swift in Sources */,
 				67D4EF8A1CE4BAEB00DF4E6C /* UITableViewExtension.swift in Sources */,
 				7E11EAA21CE9A17000F41C3D /* HomeViewLogicLayer.swift in Sources */,
+				7E9DDF521CEB0B1000ACE1CD /* StoryModel.swift in Sources */,
 				67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */,
 				7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */,
 				67D4EF891CE4BAEB00DF4E6C /* UIScrollViewExtension.swift in Sources */,
@@ -347,6 +374,7 @@
 				67D4EF881CE4BAEB00DF4E6C /* UIImageExtension.swift in Sources */,
 				67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */,
 				67D4EF861CE4BAEB00DF4E6C /* UIButtonExtension.swift in Sources */,
+				7E9DDF4F1CEAF9E400ACE1CD /* HomeViewNetHelper.swift in Sources */,
 				67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */,
 				67D4EF601CE4B9FA00DF4E6C /* HomeViewController.swift in Sources */,
 			);

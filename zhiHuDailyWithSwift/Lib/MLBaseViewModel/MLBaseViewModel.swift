@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct MLBaseViewModel {
+public class MLBaseViewModel {
     typealias BoolHandler = () -> Bool
     typealias VoidHandler = () -> ()
     
-    let completionHandler: BoolHandler?
-    let updateHandler: VoidHandler?
+    let completionHandler: BoolHandler
+    let updateHandler: VoidHandler
     
     public var isHasLoadMore:Bool { return _isHasLoadMore}
     private var _isHasLoadMore: Bool = true
@@ -21,23 +21,23 @@ public struct MLBaseViewModel {
     public var isFirst:Bool { return _isFirst}
     private var _isFirst: Bool = true
     
-    public mutating func update() {
+    init(completionHandler: BoolHandler, updateHandler:VoidHandler){
+        self.completionHandler = completionHandler
+        self.updateHandler = updateHandler
+    }
+    
+    public func update() {
         _isFirst = handling() ? false : true
     }
     
-    public mutating func loadMore() {
+    public func loadMore() {
         handling()
     }
     
-    private mutating func handling() -> Bool {
-        if let updateHandler = updateHandler{
-            updateHandler()
-        }
-        
-        if let completionHandler = completionHandler {
-            if completionHandler() {
+    private func handling() -> Bool {
+        updateHandler()
+        if completionHandler() {
                 return true
-            }
         }
         return false
     }
