@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct HomeStoryModel {
+    let topStories: [TopStoryModel]
+    var contentStories: [ContentStoryModel]
+    
+    init (topStories: [TopStoryModel], contentStories: [ContentStoryModel]) {
+        self.topStories = topStories
+        self.contentStories = contentStories
+    }
+}
+
 struct TopStoryModel {
     var image: String
     var id: String

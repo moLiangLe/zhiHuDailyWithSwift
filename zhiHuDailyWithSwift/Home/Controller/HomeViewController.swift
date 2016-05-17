@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class HomeViewController: UIViewController{
     
@@ -16,7 +17,6 @@ class HomeViewController: UIViewController{
     lazy var _slideArray = NSMutableArray()
     lazy var _slideImgArray = NSMutableArray()
     lazy var _slideTtlArray = NSMutableArray()
-    private var _netHelper: HomeViewNetHelper?
     
     var _bloading = false
     var _dateString = ""
@@ -31,7 +31,6 @@ class HomeViewController: UIViewController{
         _tableView.dataSource = self
         _tableView.delegate = self
         self.view.addSubview(_tableView)
-        _netHelper = HomeViewNetHelper()
         showLauchImage()
         
         loadData()
@@ -42,9 +41,9 @@ class HomeViewController: UIViewController{
     }
     
     func loadData(){
-        _netHelper?.asyncGetHomeAllArticles(dateOfDate: NSDate(), completionHandler: {
-            
-        })
+        HomeViewNetHelper.asyncGetHomeAllArticles().then { homeStoryModel -> Void in
+            print(homeStoryModel)
+        }
     }
 }
 
