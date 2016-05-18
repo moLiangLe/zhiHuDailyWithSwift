@@ -8,43 +8,66 @@
 
 import UIKit
 import PromiseKit
+import Kingfisher
 
 class HomeViewController: UIViewController{
     
-    private var _tableView : UITableView!
-    lazy var _dataKey = NSMutableArray()
-    lazy var _dataFull = NSMutableDictionary() //date as key, above
-    lazy var _slideArray = NSMutableArray()
-    lazy var _slideImgArray = NSMutableArray()
-    lazy var _slideTtlArray = NSMutableArray()
+    private var tableView: UITableView!
+    private var homeStoryModel: HomeStoryModel?
+    let identifier = "homeViewCell"
     
-    var _bloading = false
-    var _dateString = ""
-    
-    let identifier = "HomeViewCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "今日热闻"
-        _tableView = UITableView(frame:CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: .Plain)
-        _tableView.registerClass(HomeViewCell.self, forCellReuseIdentifier: identifier)
+        tableView = UITableView(frame:CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: .Plain)
+        tableView.registerNib(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: identifier)
         self.edgesForExtendedLayout = UIRectEdge.Top
-        _tableView.dataSource = self
-        _tableView.delegate = self
-        self.view.addSubview(_tableView)
-        showLauchImage()
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.view.addSubview(tableView)
         
         loadData()
     }
     
-    func showLauchImage() {
+    func loadData(){
+        HomeViewNetHelper.asyncGetHomeAllArticles().then
+            { homeStoryModel -> Void in
+            self.homeStoryModel = homeStoryModel
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let homeStoryModel = homeStoryModel else {
+            return 0
+        }
+        
+        return homeStoryModel.contentStories.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell {
+        let identifier = "homeViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeViewCell
+        let contentStory =  homeStoryModel!.contentStories[indexPath.row];
+        cell.titleLabel.text = contentStory.title
+        if let url = NSURL(string: homeStoryModel!.contentStories[indexPath.row].images[0]) {
+            cell.titleImageView.kf_setImageWithURL(url)
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     
-    func loadData(){
-        HomeViewNetHelper.asyncGetHomeAllArticles().then { homeStoryModel -> Void in
-            print(homeStoryModel)
-        }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80;
     }
+    
 }
 
 

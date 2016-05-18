@@ -2,15 +2,18 @@
 //  HomeViewCell.swift
 //  zhiHuDailyWithSwift
 //
-//  Created by moLiang on 16/5/16.
+//  Created by moLiang on 16/5/18.
 //  Copyright © 2016年 moliang. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
 class HomeViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,5 +24,5 @@ class HomeViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
