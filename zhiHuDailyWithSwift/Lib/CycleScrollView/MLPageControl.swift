@@ -23,31 +23,22 @@ class MLPageControl: UIControl {
     var dotView: UIView?
     var dots:NSMutableArray = []
     
-    private var _dotImage: UIImage?
     var dotImage: UIImage? {
-        get{ return _dotImage }
-        set{
-            _dotImage = newValue
+        didSet{
             resetDotViews()
             dotViewClass = nil
         }
     }
     
-    private var _currentDotImage: UIImage?
     var currentDotImage: UIImage? {
-        get{ return _currentDotImage }
-        set{
-            _currentDotImage = newValue
+        didSet{
             resetDotViews()
             dotViewClass = nil
         }
     }
     
-    private var _dotViewClass : MLDotViewProtocol?
     var dotViewClass: MLDotViewProtocol? {
-        get{ return _dotViewClass }
-        set{
-            _dotViewClass = newValue
+        didSet{
             self.dotSize = CGSizeZero;
             resetDotViews()
         }
@@ -86,21 +77,14 @@ class MLPageControl: UIControl {
         }
     }
     
-    private var _spacingBetweenDots: CGFloat = 8
-    var spacingBetweenDots: CGFloat {
-        get { return _spacingBetweenDots }
-        set {
-            _spacingBetweenDots = newValue
+    var spacingBetweenDots: CGFloat = 8 {
+        didSet {
             resetDotViews()
         }
     }
     
-    private var _numberOfPages = 0
-    var numberOfPages: Int {
-        get { return _numberOfPages }
-        set
-        {
-            _numberOfPages = newValue
+    var numberOfPages: Int = 0 {
+        didSet {
             resetDotViews()
         }
     }
