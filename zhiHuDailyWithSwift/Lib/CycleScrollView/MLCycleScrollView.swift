@@ -20,7 +20,7 @@ enum MLCycleScrollViewPageContolStyle {
 }
 
 protocol MLCycleScrollViewDelegate {
-    func cycleScrollView(cycleScrollView: MLCycleScrollView,didSelectItemAtIndex index:NSInteger)
+    func cycleScrollView(cycleScrollView: MLCycleScrollView, didSelectItemAtIndex index:NSInteger)
 }
 
 class MLCycleScrollView: UIView {
@@ -50,6 +50,8 @@ class MLCycleScrollView: UIView {
     private var totalItemsCount: NSInteger = 0
     private var pageControl: UIControl?
     
+    let CycleScrollidentifier = "CycleScrollidentifier"
+    
     override init(frame: CGRect) {
         pageControlAliment = .Center
         autoScrollTimeInterval = 2.0
@@ -75,9 +77,41 @@ class MLCycleScrollView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func clearCache() {
-    
+    deinit {
+        mainView?.delegate = nil
+        mainView?.dataSource = nil
     }
     
+}
+
+
+// MARK: ViewLogicLayer
+extension MLCycleScrollView: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // MARK: UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return totalItemsCount
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CycleScrollidentifier, forIndexPath: indexPath)
+        return cell
+    }
+    
+    // MARK: UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
 }

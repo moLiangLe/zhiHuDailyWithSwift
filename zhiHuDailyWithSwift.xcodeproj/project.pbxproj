@@ -31,6 +31,9 @@
 		7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */; };
 		7E9DDF4F1CEAF9E400ACE1CD /* HomeViewNetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF4E1CEAF9E400ACE1CD /* HomeViewNetHelper.swift */; };
 		7E9DDF521CEB0B1000ACE1CD /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */; };
+		7EE600891CED62C3006AA928 /* MLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE600881CED62C3006AA928 /* MLCollectionViewCell.swift */; };
+		7EE6008B1CED6D12006AA928 /* MLDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6008A1CED6D12006AA928 /* MLDotView.swift */; };
+		7EE6008D1CED9113006AA928 /* MLPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6008C1CED9113006AA928 /* MLPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7E9DDF4E1CEAF9E400ACE1CD /* HomeViewNetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewNetHelper.swift; sourceTree = "<group>"; };
 		7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
+		7EE600881CED62C3006AA928 /* MLCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EE6008A1CED6D12006AA928 /* MLDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLDotView.swift; sourceTree = "<group>"; };
+		7EE6008C1CED9113006AA928 /* MLPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLPageControl.swift; sourceTree = "<group>"; };
 		BA40336C6420D3D61A97BC13 /* Pods-zhiHuDailyWithSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhiHuDailyWithSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhiHuDailyWithSwift/Pods-zhiHuDailyWithSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				6771455A1CE376FA000E1ACD /* MLCycleScrollView.swift */,
+				7EE600881CED62C3006AA928 /* MLCollectionViewCell.swift */,
+				7EE6008A1CED6D12006AA928 /* MLDotView.swift */,
+				7EE6008C1CED9113006AA928 /* MLPageControl.swift */,
 			);
 			path = CycleScrollView;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE600891CED62C3006AA928 /* MLCollectionViewCell.swift in Sources */,
 				7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */,
 				67D4EF8B1CE4BAEB00DF4E6C /* UITextFieldExtension.swift in Sources */,
 				6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */,
@@ -389,6 +399,8 @@
 				7E8BCBF51CEC581D005E5C12 /* HomeViewCell.swift in Sources */,
 				67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */,
 				67D4EF601CE4B9FA00DF4E6C /* HomeViewController.swift in Sources */,
+				7EE6008B1CED6D12006AA928 /* MLDotView.swift in Sources */,
+				7EE6008D1CED9113006AA928 /* MLPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

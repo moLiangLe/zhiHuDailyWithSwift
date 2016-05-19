@@ -38,6 +38,7 @@ class HomeViewController: UIViewController{
     }
 }
 
+// MARK: ViewLogicLayer
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +51,6 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell {
-        let identifier = "homeViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeViewCell
         let contentStory =  homeStoryModel!.contentStories[indexPath.row];
         cell.titleLabel.text = contentStory.title
