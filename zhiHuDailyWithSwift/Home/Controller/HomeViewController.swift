@@ -13,7 +13,8 @@ import Kingfisher
 class HomeViewController: UIViewController{
     
     private var tableView: UITableView!
-    private var homeStoryModel: HomeStoryModel?
+    private var homeStoryModel: HomeStoryModel!
+    private var cycleScrollView: MLCycleScrollView!
     let identifier = "homeViewCell"
     
     override func viewDidLoad() {
@@ -26,20 +27,38 @@ class HomeViewController: UIViewController{
         tableView.delegate = self
         self.view.addSubview(tableView)
         
+        cycleScrollView = MLCycleScrollView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 154))
+        cycleScrollView.configCycleScrollView()
+        cycleScrollView.infiniteLoop = true
+        cycleScrollView.delegate = self
+        cycleScrollView.autoScrollTimeInterval = 6.0
+        cycleScrollView.titleLabelTextFont = UIFont(name: "STHeitiSC-Medium", size: 21)!
+        cycleScrollView.titleLabelBackgroundColor = UIColor.clearColor()
+        cycleScrollView.titleLabelHeight = 60
+        cycleScrollView.titleLabelAlpha = 1
+        
+        
+        //将ParallaxView设置为tableHeaderView
+        self.tableView.tableHeaderView = cycleScrollView
+        
         loadData()
     }
     
     func loadData(){
         HomeViewNetHelper.asyncGetHomeAllArticles().then
-            { homeStoryModel -> Void in
-            self.homeStoryModel = homeStoryModel
-            self.tableView.reloadData()
+            { [unowned self] homeStoryModel -> Void in
+                self.homeStoryModel = homeStoryModel
+                for item in self.homeStoryModel.topStories {
+                    self.cycleScrollView.imagePathsGroup.append(item.image)
+                    self.cycleScrollView.titlesGroup.append(item.title)
+                }
+                self.tableView.reloadData()
         }
     }
 }
 
 // MARK: ViewLogicLayer
-extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController : UITableViewDataSource, UITableViewDelegate,MLCycleScrollViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -52,7 +71,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeViewCell
-        let contentStory =  homeStoryModel!.contentStories[indexPath.row];
+        let contentStory =  homeStoryModel.contentStories[indexPath.row];
         cell.titleLabel.text = contentStory.title
         if let url = NSURL(string: homeStoryModel!.contentStories[indexPath.row].images[0]) {
             cell.titleImageView.kf_setImageWithURL(url)
@@ -68,6 +87,13 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         return 80;
     }
     
+    func cycleScrollView(cycleScrollView: MLCycleScrollView, didSelectItemAtIndex index:NSInteger) {
+        
+    }
+    
+    func cycleScrollView(cycleScrollView: MLCycleScrollView, didScrollToIndex index:NSInteger) {
+    
+    }
 }
 
 

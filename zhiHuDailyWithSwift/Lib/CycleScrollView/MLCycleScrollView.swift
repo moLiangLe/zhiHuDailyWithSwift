@@ -106,7 +106,9 @@ class MLCycleScrollView: UIView {
             mainView.reloadData()
             
             if imagePathsGroup.count > 0 {
-                backgroundImageView!.removeFromSuperview()
+                if let backgroundImageView = backgroundImageView {
+                    backgroundImageView.removeFromSuperview()
+                }
             } else {
                 if self.backgroundImageView != nil && !(self.backgroundImageView!.superview != nil) {
                     self.insertSubview(self.backgroundImageView! , belowSubview: self.mainView)
@@ -124,8 +126,8 @@ class MLCycleScrollView: UIView {
         }
     }
     
-    lazy private var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    lazy private var mainView: UICollectionView = UICollectionView()
+    private var flowLayout: UICollectionViewFlowLayout!
+    private var mainView: UICollectionView!
     private var imagesGroup: [UIImage] = [] {
         didSet {
             totalItemsCount = self.infiniteLoop ? self.imagesGroup.count * 100 : self.imagesGroup.count
@@ -148,10 +150,12 @@ class MLCycleScrollView: UIView {
     let CycleScrollidentifier = "CycleScrollidentifier"
     
     func configCycleScrollView() {
+        flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = self.size
         flowLayout.minimumLineSpacing = 0
         flowLayout.scrollDirection = .Horizontal
         
+        mainView = UICollectionView(frame: self.bounds, collectionViewLayout: flowLayout)
         mainView.collectionViewLayout = flowLayout
         mainView.frame = self.bounds
         mainView.backgroundColor = UIColor.clearColor();
