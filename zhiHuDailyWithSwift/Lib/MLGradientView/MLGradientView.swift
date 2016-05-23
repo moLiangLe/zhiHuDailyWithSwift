@@ -38,6 +38,11 @@ class MLGradientView: UIView {
         }
     }
     
+    convenience init(frame: CGRect, type:MLGradientViewType) {
+        self.init(frame: frame)
+        self.type = type
+    }
+    
     func insertTransparentGradient() {
         let colorOne = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.0)
         let colorTwo = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 1.0)

@@ -9,10 +9,7 @@
 import UIKit
 
 extension UIColor {
-    class func color(hexString:String) -> UIColor {
-        
-        
-        return UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    convenience init (red: CGFloat, green: CGFloat, blue: CGFloat) {
+        self.init(red: red, green: green, blue: blue, alpha: 1)
     }
-
 }

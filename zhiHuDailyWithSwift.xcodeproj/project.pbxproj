@@ -26,6 +26,8 @@
 		67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */; };
 		67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */; };
 		67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */; };
+		67F7A1FA1CF33BB100F7F950 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7A1F91CF33BB100F7F950 /* UINavigationBarExtension.swift */; };
+		67F7A2011CF345A200F7F950 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */; };
 		7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */; };
 		7E8BCBF51CEC581D005E5C12 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BCBF31CEC581D005E5C12 /* HomeViewCell.swift */; };
 		7E8BCBF61CEC581D005E5C12 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BCBF41CEC581D005E5C12 /* HomeViewCell.xib */; };
@@ -60,6 +62,8 @@
 		67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		67F7A1F91CF33BB100F7F950 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBaseViewModel.swift; sourceTree = "<group>"; };
 		7E8BCBF31CEC581D005E5C12 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		7E8BCBF41CEC581D005E5C12 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			children = (
 				677145561CE374DF000E1ACD /* Lib */,
 				67D4EF5C1CE4B9AA00DF4E6C /* Home */,
+				67F7A1FB1CF3452A00F7F950 /* SideView */,
 				67CDC83F1CE369E6006BB24B /* AppDelegate.swift */,
 				67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */,
 				67CDC8461CE369E6006BB24B /* Assets.xcassets */,
@@ -221,8 +226,49 @@
 				67D4EF811CE4BAEB00DF4E6C /* UITableViewExtension.swift */,
 				67D4EF821CE4BAEB00DF4E6C /* UITextFieldExtension.swift */,
 				67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */,
+				67F7A1F91CF33BB100F7F950 /* UINavigationBarExtension.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		67F7A1FB1CF3452A00F7F950 /* SideView */ = {
+			isa = PBXGroup;
+			children = (
+				67F7A1FC1CF3457200F7F950 /* Controller */,
+				67F7A1FD1CF3457200F7F950 /* Model */,
+				67F7A1FE1CF3457200F7F950 /* View */,
+				67F7A1FF1CF3457200F7F950 /* ViewMode */,
+			);
+			path = SideView;
+			sourceTree = "<group>";
+		};
+		67F7A1FC1CF3457200F7F950 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67F7A1FD1CF3457200F7F950 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67F7A1FE1CF3457200F7F950 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67F7A1FF1CF3457200F7F950 /* ViewMode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewMode;
 			sourceTree = "<group>";
 		};
 		69CF7D342491099852D3D521 /* Pods */ = {
@@ -393,6 +439,7 @@
 				67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */,
 				7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */,
 				67D4EF8B1CE4BAEB00DF4E6C /* UITextFieldExtension.swift in Sources */,
+				67F7A1FA1CF33BB100F7F950 /* UINavigationBarExtension.swift in Sources */,
 				6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */,
 				67D4EF841CE4BAEB00DF4E6C /* StringExtension.swift in Sources */,
 				67D4EF871CE4BAEB00DF4E6C /* UIColorExtension.swift in Sources */,
@@ -404,6 +451,7 @@
 				6799D6AE1CEB564D00013A6A /* MLNetWork.swift in Sources */,
 				67D4EF891CE4BAEB00DF4E6C /* UIScrollViewExtension.swift in Sources */,
 				67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */,
+				67F7A2011CF345A200F7F950 /* SideMenuViewController.swift in Sources */,
 				67D4EF881CE4BAEB00DF4E6C /* UIImageExtension.swift in Sources */,
 				67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */,
 				67D4EF861CE4BAEB00DF4E6C /* UIButtonExtension.swift in Sources */,
