@@ -11,16 +11,16 @@ import Foundation
 
 extension UINavigationBar {
     private struct AssociatedKeys {
-        static var overlayKey = "ml_overlayKey"
+        static var overlay_Key = "ml_overlay_Key"
     }
     
     var overlay: UIView? {
         get{
-           return objc_getAssociatedObject(self, &AssociatedKeys.overlayKey) as? UIView
+           return objc_getAssociatedObject(self, &AssociatedKeys.overlay_Key) as? UIView
         }
         set{
             if let newValue = newValue {
-                objc_setAssociatedObject(self, &AssociatedKeys.overlayKey, newValue as UIView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(self, &AssociatedKeys.overlay_Key, newValue as UIView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }

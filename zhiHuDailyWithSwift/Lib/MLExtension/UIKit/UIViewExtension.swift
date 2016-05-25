@@ -13,9 +13,12 @@ extension UIView{
     /**
      Create a snapshot image of the complete view hierarchy.
      */
-    func snapshotImage() -> UIImage{
+    func snapshotImage() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0)
-        self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        self.layer.renderInContext(context)
         let snap = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return snap
@@ -26,7 +29,7 @@ extension UIView{
      @discussion It's faster than "snapshotImage", but may cause screen updates.
      See -[UIView drawViewHierarchyInRect:afterScreenUpdates:] for more information.
      */
-    func snapshotImageAfterScreenUpdates(afterUpdates:Bool) -> UIImage{
+    func snapshotImageAfterScreenUpdates(afterUpdates:Bool) -> UIImage? {
         guard self.respondsToSelector(#selector(UIView.drawViewHierarchyInRect(_:afterScreenUpdates:))) else{
             return self.snapshotImage()
         }
@@ -37,26 +40,21 @@ extension UIView{
         return snap;
     }
     
-    func snapshotPDF() -> NSData{
-        return NSData()
+    func snapshotPDF() -> NSData? {
+        var bounds = self.bounds
+        let data = NSMutableData()
+        let consumer = CGDataConsumerCreateWithCFData(data)
+        guard let context = CGPDFContextCreate(consumer, &bounds, nil) else {
+            return nil;
+        }
+        CGPDFContextBeginPage(context, nil)
+        CGContextTranslateCTM(context, 0, bounds.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0)
+        self.layer.renderInContext(context)
+        CGPDFContextEndPage(context)
+        CGPDFContextClose(context)
+        return data
     }
-    
-//    - (NSData *)snapshotPDF {
-//    CGRect bounds = self.bounds;
-//    NSMutableData* data = [NSMutableData data];
-//    CGDataConsumerRef consumer = CGDataConsumerCreateWithCFData((__bridge CFMutableDataRef)data);
-//    CGContextRef context = CGPDFContextCreate(consumer, &bounds, NULL);
-//    CGDataConsumerRelease(consumer);
-//    if (!context) return nil;
-//    CGPDFContextBeginPage(context, NULL);
-//    CGContextTranslateCTM(context, 0, bounds.size.height);
-//    CGContextScaleCTM(context, 1.0, -1.0);
-//    [self.layer renderInContext:context];
-//    CGPDFContextEndPage(context);
-//    CGPDFContextClose(context);
-//    CGContextRelease(context);
-//    return data;
-//    }
     
     /**
     Shortcut to set the view.layer's shadow
@@ -132,9 +130,7 @@ extension UIView{
     
     ///< Shortcut for frame.origin.x.
     var left:CGFloat{
-        get{
-            return self.frame.origin.x
-        }
+        get{ return self.frame.origin.x }
         set{
             var frame = self.frame
             frame.origin.x = newValue
