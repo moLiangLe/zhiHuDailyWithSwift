@@ -26,6 +26,7 @@
 		67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */; };
 		67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */; };
 		67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */; };
+		67E18DC41CF5DC62007ECF8E /* NSFileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E18DC31CF5DC62007ECF8E /* NSFileManagerExtension.swift */; };
 		67F7A1FA1CF33BB100F7F950 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7A1F91CF33BB100F7F950 /* UINavigationBarExtension.swift */; };
 		67F7A2011CF345A200F7F950 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */; };
 		7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */; };
@@ -66,6 +67,7 @@
 		67D4EF831CE4BAEB00DF4E6C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		67E18DC31CF5DC62007ECF8E /* NSFileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFileManagerExtension.swift; sourceTree = "<group>"; };
 		67F7A1F91CF33BB100F7F950 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBaseViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				67D4EF7A1CE4BAEB00DF4E6C /* StringExtension.swift */,
+				67E18DC31CF5DC62007ECF8E /* NSFileManagerExtension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */,
 				67F7A2011CF345A200F7F950 /* SideMenuViewController.swift in Sources */,
 				7E68D01C1CF5527000ED145D /* CALayerExection.swift in Sources */,
+				67E18DC41CF5DC62007ECF8E /* NSFileManagerExtension.swift in Sources */,
 				67D4EF881CE4BAEB00DF4E6C /* UIImageExtension.swift in Sources */,
 				7E68D0191CF5402C00ED145D /* UIGestureRecognizerExection.swift in Sources */,
 				67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */,
