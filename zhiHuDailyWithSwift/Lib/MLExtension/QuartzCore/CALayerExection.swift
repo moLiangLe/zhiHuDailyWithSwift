@@ -10,51 +10,7 @@ import UIKit
 
 extension CALayer {
     
-    func snapshotImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        self.renderInContext(context)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-    
-    func snapshotPDF() -> NSData? {
-        var bounds = self.bounds
-        let data = NSMutableData()
-        let consumer = CGDataConsumerCreateWithCFData(data)
-        guard let context = CGPDFContextCreate(consumer, &bounds, nil) else {
-            return nil;
-        }
-        CGPDFContextBeginPage(context, nil)
-        CGContextTranslateCTM(context, 0, bounds.size.height)
-        CGContextScaleCTM(context, 1.0, -1.0)
-        self.renderInContext(context)
-        CGPDFContextEndPage(context)
-        CGPDFContextClose(context)
-        return data
-    }
-    
-    func setLayerShadow(color: UIColor, offset: CGSize, radius: CGFloat) {
-        self.shadowColor = color.CGColor
-        self.shadowOffset = offset
-        self.shadowRadius = radius
-        self.shadowOpacity = 1
-        self.shouldRasterize = true
-        self.rasterizationScale = UIScreen.mainScreen().scale
-    }
-    
-    func removeAllSublayers() {
-        guard let sublayers = self.sublayers else {
-            return
-        }
-
-        while sublayers.count > 0 {
-            sublayers.last?.removeFromSuperlayer()
-        }
-    }
+    // MARK: - properties
     
     var left:CGFloat {
         get{ return self.frame.origin.x }
@@ -303,6 +259,54 @@ extension CALayer {
             var d = self.transform;
             d.m34 = newValue;
             self.transform = d;
+        }
+    }
+    
+    // MARK: - functions
+
+    func snapshotImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        self.renderInContext(context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    func snapshotPDF() -> NSData? {
+        var bounds = self.bounds
+        let data = NSMutableData()
+        let consumer = CGDataConsumerCreateWithCFData(data)
+        guard let context = CGPDFContextCreate(consumer, &bounds, nil) else {
+            return nil;
+        }
+        CGPDFContextBeginPage(context, nil)
+        CGContextTranslateCTM(context, 0, bounds.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0)
+        self.renderInContext(context)
+        CGPDFContextEndPage(context)
+        CGPDFContextClose(context)
+        return data
+    }
+    
+    func setLayerShadow(color: UIColor, offset: CGSize, radius: CGFloat) {
+        self.shadowColor = color.CGColor
+        self.shadowOffset = offset
+        self.shadowRadius = radius
+        self.shadowOpacity = 1
+        self.shouldRasterize = true
+        self.rasterizationScale = UIScreen.mainScreen().scale
+    }
+    
+    func removeAllSublayers() {
+        guard let sublayers = self.sublayers else {
+            return
+        }
+        
+        while sublayers.count > 0 {
+            sublayers.last?.removeFromSuperlayer()
         }
     }
 }

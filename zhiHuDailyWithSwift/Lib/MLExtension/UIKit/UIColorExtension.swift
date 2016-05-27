@@ -209,4 +209,12 @@ extension UIColor {
         let contrast = (nom + 0.05) / (denom + 0.05)
         return 1.6 < contrast
     }
+    
+    public static func randomColor(randomAlpha: Bool = false) -> UIColor {
+        let randomRed = CGFloat.random()
+        let randomGreen = CGFloat.random()
+        let randomBlue = CGFloat.random()
+        let alpha = randomAlpha ? CGFloat.random() : 1.0
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: alpha)
+    }
 }
