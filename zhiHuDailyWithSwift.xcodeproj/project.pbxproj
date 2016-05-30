@@ -30,6 +30,7 @@
 		67E268131CFC6469000C0012 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E268121CFC6469000C0012 /* ParallaxHeaderView.swift */; };
 		67E268151CFC6BA5000C0012 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E268141CFC6BA5000C0012 /* Accelerate.framework */; };
 		67E2681E1CFC716E000C0012 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E2681D1CFC716E000C0012 /* UIImageEffects.m */; };
+		67E268221CFC8290000C0012 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E268211CFC8290000C0012 /* SWRevealViewController.m */; };
 		67EC3A981CF7E819009B074B /* CALayerExection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A971CF7E819009B074B /* CALayerExection.swift */; };
 		67EC3A9A1CF7E86A009B074B /* CGFloatExection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A991CF7E86A009B074B /* CGFloatExection.swift */; };
 		67EC3A9C1CF7EC15009B074B /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A9B1CF7EC15009B074B /* CGRectExtensions.swift */; };
@@ -80,6 +81,8 @@
 		67E2681A1CFC710B000C0012 /* zhiHuDailyWithSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zhiHuDailyWithSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		67E2681C1CFC716E000C0012 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		67E2681D1CFC716E000C0012 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		67E268201CFC8290000C0012 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		67E268211CFC8290000C0012 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		67EC3A971CF7E819009B074B /* CALayerExection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExection.swift; sourceTree = "<group>"; };
 		67EC3A991CF7E86A009B074B /* CGFloatExection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExection.swift; sourceTree = "<group>"; };
 		67EC3A9B1CF7EC15009B074B /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		677145561CE374DF000E1ACD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				67E2681F1CFC8290000C0012 /* SWRevealViewController */,
 				67E268111CFC644A000C0012 /* ParallaxHeaderView */,
 				67C3B6AF1CF1E48B00128356 /* MLGradientView */,
 				6799D6AC1CEB563A00013A6A /* MLNetWork */,
@@ -283,6 +287,15 @@
 				67E2681D1CFC716E000C0012 /* UIImageEffects.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		67E2681F1CFC8290000C0012 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				67E268201CFC8290000C0012 /* SWRevealViewController.h */,
+				67E268211CFC8290000C0012 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		67EC3A961CF7E819009B074B /* QuartzCore */ = {
@@ -501,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE600891CED62C3006AA928 /* MLCollectionViewCell.swift in Sources */,
+				67E268221CFC8290000C0012 /* SWRevealViewController.m in Sources */,
 				67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */,
 				7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */,
 				67D4EF8B1CE4BAEB00DF4E6C /* UITextFieldExtension.swift in Sources */,
