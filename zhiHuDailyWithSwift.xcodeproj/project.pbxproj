@@ -27,6 +27,9 @@
 		67D4EF8E1CE4BB1300DF4E6C /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */; };
 		67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */; };
 		67E18DC41CF5DC62007ECF8E /* NSFileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E18DC31CF5DC62007ECF8E /* NSFileManagerExtension.swift */; };
+		67E268131CFC6469000C0012 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E268121CFC6469000C0012 /* ParallaxHeaderView.swift */; };
+		67E268151CFC6BA5000C0012 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E268141CFC6BA5000C0012 /* Accelerate.framework */; };
+		67E2681E1CFC716E000C0012 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E2681D1CFC716E000C0012 /* UIImageEffects.m */; };
 		67EC3A981CF7E819009B074B /* CALayerExection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A971CF7E819009B074B /* CALayerExection.swift */; };
 		67EC3A9A1CF7E86A009B074B /* CGFloatExection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A991CF7E86A009B074B /* CGFloatExection.swift */; };
 		67EC3A9C1CF7EC15009B074B /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC3A9B1CF7EC15009B074B /* CGRectExtensions.swift */; };
@@ -72,6 +75,11 @@
 		67D4EF8D1CE4BB1300DF4E6C /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		67E18DC31CF5DC62007ECF8E /* NSFileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFileManagerExtension.swift; sourceTree = "<group>"; };
+		67E268121CFC6469000C0012 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
+		67E268141CFC6BA5000C0012 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		67E2681A1CFC710B000C0012 /* zhiHuDailyWithSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zhiHuDailyWithSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		67E2681C1CFC716E000C0012 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		67E2681D1CFC716E000C0012 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		67EC3A971CF7E819009B074B /* CALayerExection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExection.swift; sourceTree = "<group>"; };
 		67EC3A991CF7E86A009B074B /* CGFloatExection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExection.swift; sourceTree = "<group>"; };
 		67EC3A9B1CF7EC15009B074B /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E268151CFC6BA5000C0012 /* Accelerate.framework in Frameworks */,
 				206DFC1147A1ECA49D7351FD /* Pods_zhiHuDailyWithSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +118,7 @@
 		2FF9E70F325B23E5FDC56F0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67E268141CFC6BA5000C0012 /* Accelerate.framework */,
 				2EAEEC2946AC356927CD2B65 /* Pods_zhiHuDailyWithSwift.framework */,
 			);
 			name = Frameworks;
@@ -117,6 +127,7 @@
 		677145561CE374DF000E1ACD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				67E268111CFC644A000C0012 /* ParallaxHeaderView */,
 				67C3B6AF1CF1E48B00128356 /* MLGradientView */,
 				6799D6AC1CEB563A00013A6A /* MLNetWork */,
 				7E11EA9E1CE99F4B00F41C3D /* MLBaseViewModel */,
@@ -182,6 +193,7 @@
 				67CDC8461CE369E6006BB24B /* Assets.xcassets */,
 				67CDC8481CE369E6006BB24B /* LaunchScreen.storyboard */,
 				67CDC84B1CE369E6006BB24B /* Info.plist */,
+				67E2681A1CFC710B000C0012 /* zhiHuDailyWithSwift-Bridging-Header.h */,
 			);
 			path = zhiHuDailyWithSwift;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 		67D4EF781CE4BAEB00DF4E6C /* MLExtension */ = {
 			isa = PBXGroup;
 			children = (
+				67E2681B1CFC7152000C0012 /* Other */,
 				67EC3A961CF7E819009B074B /* QuartzCore */,
 				67D4EF791CE4BAEB00DF4E6C /* Foundation */,
 				67D4EF7B1CE4BAEB00DF4E6C /* UIKit */,
@@ -253,6 +266,23 @@
 				67EC3A9F1CF821FB009B074B /* UIFontExtension.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		67E268111CFC644A000C0012 /* ParallaxHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				67E268121CFC6469000C0012 /* ParallaxHeaderView.swift */,
+			);
+			path = ParallaxHeaderView;
+			sourceTree = "<group>";
+		};
+		67E2681B1CFC7152000C0012 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				67E2681C1CFC716E000C0012 /* UIImageEffects.h */,
+				67E2681D1CFC716E000C0012 /* UIImageEffects.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		67EC3A961CF7E819009B074B /* QuartzCore */ = {
@@ -478,6 +508,7 @@
 				6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */,
 				67D4EF841CE4BAEB00DF4E6C /* StringExtension.swift in Sources */,
 				67EC3A981CF7E819009B074B /* CALayerExection.swift in Sources */,
+				67E268131CFC6469000C0012 /* ParallaxHeaderView.swift in Sources */,
 				67D4EF871CE4BAEB00DF4E6C /* UIColorExtension.swift in Sources */,
 				67D4EF851CE4BAEB00DF4E6C /* UIBezierPathExtension.swift in Sources */,
 				67D4EF8A1CE4BAEB00DF4E6C /* UITableViewExtension.swift in Sources */,
@@ -499,6 +530,7 @@
 				67D4EF861CE4BAEB00DF4E6C /* UIButtonExtension.swift in Sources */,
 				7E9DDF4F1CEAF9E400ACE1CD /* HomeViewNetHelper.swift in Sources */,
 				7E8BCBF51CEC581D005E5C12 /* HomeViewCell.swift in Sources */,
+				67E2681E1CFC716E000C0012 /* UIImageEffects.m in Sources */,
 				67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */,
 				67D4EF601CE4B9FA00DF4E6C /* HomeViewController.swift in Sources */,
 				67EC3AA01CF821FB009B074B /* UIFontExtension.swift in Sources */,
@@ -612,11 +644,14 @@
 			baseConfigurationReference = 1F15A9EF4E9ED1E0DAA144DB /* Pods-zhiHuDailyWithSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = zhiHuDailyWithSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcl.zhiHuDailyWithSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zhiHuDailyWithSwift/zhiHuDailyWithSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -625,11 +660,13 @@
 			baseConfigurationReference = BA40336C6420D3D61A97BC13 /* Pods-zhiHuDailyWithSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = zhiHuDailyWithSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lcl.zhiHuDailyWithSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zhiHuDailyWithSwift/zhiHuDailyWithSwift-Bridging-Header.h";
 			};
 			name = Release;
 		};
