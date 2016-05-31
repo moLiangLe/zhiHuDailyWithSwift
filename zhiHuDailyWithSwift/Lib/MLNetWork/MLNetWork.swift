@@ -46,4 +46,20 @@ class MLNetWork {
         
         return promise
     }
+    
+    class func getData(URLString: String, parameters: ParameterType) -> Promise<NSData> {
+        let (promise, fulfill, reject) = Promise<NSData>.pendingPromise()
+        
+        Alamofire.request(.GET, URLString, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                let data = response.result.value as! NSData
+                fulfill(data)
+            } else {
+                reject(response.result.error!)
+            }
+        }
+        
+        return promise
+    }
 }

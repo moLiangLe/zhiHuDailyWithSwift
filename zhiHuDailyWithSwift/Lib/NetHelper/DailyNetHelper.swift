@@ -20,7 +20,7 @@ class DailyNetHelper : MLNetWork {
     }
     
     class func asyncGetTodayArticles() -> Promise<HomeStoryModel> {
-        return getJSON("https://news-at.zhihu.com/api/4/news/latest", parameters: [:]).then { (response) -> Promise<HomeStoryModel> in
+        return getJSON("https://news-at.zhihu.com/api/4/news/latest", parameters: [:]).then { response -> Promise<HomeStoryModel> in
             
             let topStoryData = response["top_stories"]
             let contentStoryData = response["stories"]
@@ -46,7 +46,7 @@ class DailyNetHelper : MLNetWork {
         let componentOfURL = DateUtil.getCalenderString(date.dateByAddingTimeInterval(86400).description)
         //let calenderStringOfDate = DateUtil.getCalenderString(date.description)
         
-        return getJSON("http://news.at.zhihu.com/api/4/news/before/\(componentOfURL)", parameters: [:]).then { (response) -> Promise<HomeStoryModel> in
+        return getJSON("http://news.at.zhihu.com/api/4/news/before/\(componentOfURL)", parameters: [:]).then { response -> Promise<HomeStoryModel> in
             
             let contentStoryData = response["stories"]
             
@@ -63,7 +63,7 @@ class DailyNetHelper : MLNetWork {
     
     //取得主题日报列表
     class func asyncGetThemesData() -> Promise<[ThemeModel]> {
-        return getJSON("http://news-at.zhihu.com/api/4/themes", parameters: [:]).then { (response) -> Promise<[ThemeModel]> in
+        return getJSON("http://news-at.zhihu.com/api/4/themes", parameters: [:]).then { response -> Promise<[ThemeModel]> in
                 let data = response["others"]
                 var themeModel = [ThemeModel]()
                 for i in 0 ..< data.count {
@@ -74,73 +74,68 @@ class DailyNetHelper : MLNetWork {
     }
     
     //获取下一次所需的启动页数据
-    class func asyncGetLaunchImage() {
-//        return getJSON("http://news-at.zhihu.com/api/4/start-image/1080*1776", parameters: [:]).then { (response) -> Promise<Void> in
-//            
-//            //拿到text并保存
-//            let text = JSON(dataResult.value!)["text"].string!
-//            self.text.text = text
-//            NSUserDefaults.standardUserDefaults().setObject(text, forKey: Keys.launchTextKey)
-//            
-//            //拿到图像URL后取出图像并保存
-//            let launchImageURL = JSON(dataResult.value!)["img"].string!
-//            Alamofire.request(.GET, launchImageURL).responseData({ (_, _, imgResult) -> Void in
-//                let imgData = imgResult.value!
-//                NSUserDefaults.standardUserDefaults().setObject(imgData, forKey: Keys.launchImgKey)
-//            })
-//            
-//            return Promise()
-//        }
+    class func asyncGetLaunchImage(){
+        //下载下一次所需的启动页数据
+        getJSON("http://news-at.zhihu.com/api/4/start-image/1080*1776", parameters: [:])
+            .then{ response -> Promise<String> in
+            //拿到text并保存
+            let text = response["text"].stringValue
+            NSUserDefaults.standardUserDefaults().setObject(text, forKey: Keys.launchTextKey)
+            let launchImageURL = response["img"].stringValue
+            return Promise(launchImageURL)
+            }
+            .then{ launchImageURL -> Promise<NSData> in
+                return getData(launchImageURL, parameters: [:])
+            }
+            .then{ response -> Promise<Void> in
+                let imgData = response;
+                NSUserDefaults.standardUserDefaults().setObject(imgData, forKey: Keys.launchImgKey)
+                return Promise()
+        }
     }
     
-    class func asyncGetTheme(themeId: String) {
-//        return getJSON("http://news-at.zhihu.com/api/4/theme/\(themeId)", parameters: [:]).then { (response) -> Promise<Void> in
-//
-//            //取得Story
-//            let storyData = data["stories"]
-//            //暂时注入themeStory
-//            var themeStory: [ContentStoryModel] = []
-//            for i in 0 ..< storyData.count {
-//                //判断是否含图
-//                if storyData[i]["images"] != nil {
-//                    themeStory.append(ContentStoryModel(images: [storyData[i]["images"][0].string!], id: String(storyData[i]["id"]), title: storyData[i]["title"].string!))
-//                } else {
-//                    //若不含图
-//                    themeStory.append(ContentStoryModel(images: [""], id: String(storyData[i]["id"]), title: storyData[i]["title"].string!))
-//                }
-//            }
-//            
-//            //取得avatars
-//            let avatarsData = data["editors"]
-//            //暂时注入editorsAvatars
-//            var editorsAvatars: [String] = []
-//            for i in 0 ..< avatarsData.count {
-//                editorsAvatars.append(avatarsData[i]["avatar"].string!)
-//            }
-//            
-//            //更新图片
-//            self.navImageView.sd_setImageWithURL(NSURL(string: data["background"].string!), completed: { (image, _, _, _) -> Void in
-//                self.themeSubview.blurViewImage = image
-//                self.themeSubview.refreshBlurViewForNewImage()
-//            })
-//            
-//            //注入themeContent
-//            self.appCloud().themeContent = ThemeContentModel(stories: themeStory, background: data["background"].string!, editorsAvatars: editorsAvatars)
-//            
-//            return Promise()
-//        }
+    class func asyncGetTheme(themeId: String) -> Promise<ThemeContentModel>{
+        return getJSON("http://news-at.zhihu.com/api/4/theme/\(themeId)", parameters: [:]).then { response -> Promise<ThemeContentModel> in
+
+            //取得Story
+            let storyData = response["stories"]
+            //暂时注入themeStory
+            var themeStory: [ContentStoryModel] = []
+            for i in 0 ..< storyData.count {
+                //判断是否含图
+                if storyData[i]["images"] != nil {
+                    themeStory.append(ContentStoryModel(images: [storyData[i]["images"][0].string!], id: String(storyData[i]["id"]), title: storyData[i]["title"].string!))
+                } else {
+                    //若不含图
+                    themeStory.append(ContentStoryModel(images: [""], id: String(storyData[i]["id"]), title: storyData[i]["title"].string!))
+                }
+            }
+            
+            //取得avatars
+            let avatarsData = response["editors"]
+            //暂时注入editorsAvatars
+            var editorsAvatars: [String] = []
+            for i in 0 ..< avatarsData.count {
+                editorsAvatars.append(avatarsData[i]["avatar"].string!)
+            }
+            
+            //注入themeContent
+            let themeContentModel = ThemeContentModel(stories: themeStory, background: response["background"].stringValue, editorsAvatars: editorsAvatars)
+            
+            return Promise(themeContentModel)
+        }
     }
     
-    class func asyncGetNextNews(newsID: String) {
-//        return getJSON("http://news-at.zhihu.com/api/4/news/\(newsID)", parameters: [:]).then { (response) -> Promise<Void> in
-//
-//            //若body存在 拼接body与css后加载
-//            if let body = JSON(dataResult.value!)["body"].string {
-//                let css = JSON(dataResult.value!)["css"][0].string!
-//                
-//                if let image = JSON(dataResult.value!)["image"].string {
-//                    if let titleString = JSON(dataResult.value!)["title"].string {
-//                        if let imageSource = JSON(dataResult.value!)["image_source"].string {
+    class func asyncGetNextNews(newsID: String) -> Promise<String>{
+        return getJSON("http://news-at.zhihu.com/api/4/news/\(newsID)", parameters: [:]).then { response -> Promise<String> in
+
+            //若body存在 拼接body与css后加载
+            if let body = response["body"].string {
+                let css = response["css"][0].stringValue
+                
+//                if let image = response["image"].string {
+//                    if let titleString = response["title"].string {
+//                        if let imageSource = response["image_source"].string {
 //                            self.loadParallaxHeader(image, imageSource: imageSource, titleString: titleString)
 //                        } else {
 //                            self.loadParallaxHeader(image, imageSource: "(null)", titleString: titleString)
@@ -153,30 +148,28 @@ class DailyNetHelper : MLNetWork {
 //                    self.statusBarBackground.backgroundColor = UIColor.whiteColor()
 //                    self.loadNormalHeader()
 //                }
-//                
-//                var html = "<html>"
-//                html += "<head>"
-//                html += "<link rel=\"stylesheet\" href="
-//                html += css
-//                html += "</head>"
-//                html += "<body>"
-//                html += body
-//                html += "</body>"
-//                html += "</html>"
-//                
-//                self.webView.loadHTMLString(html, baseURL: nil)
-//            } else {
+                
+                var html = "<html>"
+                html += "<head>"
+                html += "<link rel=\"stylesheet\" href="
+                html += css
+                html += "</head>"
+                html += "<body>"
+                html += body
+                html += "</body>"
+                html += "</html>"
+                
+                return Promise(html)
+            } else {
 //                //若是直接使用share_url的类型
 //                self.hasImage = false
 //                self.setNeedsStatusBarAppearanceUpdate()
 //                self.statusBarBackground.backgroundColor = UIColor.whiteColor()
 //                self.loadNormalHeader()
-//                
-//                let url = JSON(dataResult.value!)["share_url"].string!
-//                self.webView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
-//            }
-//            
-//            return Promise()
-//        }
+                
+                let url = response["share_url"].stringValue
+                return Promise(url)
+            }
+        }
     }
 }
