@@ -10,10 +10,10 @@ import UIKit
 
 
 class HomeViewModel: MLBaseViewModel {
-    private let _netHelper: HomeViewNetHelper
+    private let _netHelper: DailyNetHelper
     
     override init(completionHandler: BoolHandler, updateHandler: VoidHandler) {
-        _netHelper = HomeViewNetHelper()
+        _netHelper = DailyNetHelper()
         super.init(completionHandler: completionHandler, updateHandler: updateHandler)
     }
     

@@ -45,7 +45,7 @@ class HomeViewController: UIViewController{
     }
     
     func loadData(){
-        HomeViewNetHelper.asyncGetHomeAllArticles().then
+        DailyNetHelper.asyncGetArticles(dataOfDate: NSDate().dateByAddingTimeInterval(28800 - Double(0) * 86400)).then
             { [unowned self] homeStoryModel -> Void in
                 self.homeStoryModel = homeStoryModel
                 for item in self.homeStoryModel.topStories {
