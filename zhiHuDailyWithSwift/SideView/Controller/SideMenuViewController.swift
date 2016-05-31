@@ -13,6 +13,8 @@ class SideMenuViewController: UIViewController {
     let identifier = "SideMenuViewCell"
     var tableView: UITableView!
     var blurView: MLGradientView!
+    private var themeList: [ThemeModel] = []
+    
     var originState = true {
         didSet {
             if oldValue != originState {
@@ -33,6 +35,15 @@ class SideMenuViewController: UIViewController {
         
         blurView = MLGradientView(frame: CGRect(x: 0, y: ScreenHeight - 45 - 50 , width: ScreenWidth, height: 50), type: .TransparentOther)
         view.backgroundColor = UIColor(red: 19/255.0, green: 26/255.0, blue: 32/255.0)
+        
+        loadData()
+    }
+    
+    func loadData() {
+        DailyNetHelper.asyncGetThemesData().then{ [unowned self] themeList -> Void in
+            self.themeList = themeList;
+            self.tableView.reloadData()
+        }
     }
     
     //更改StatusBar颜色
@@ -50,11 +61,12 @@ class SideMenuViewController: UIViewController {
 //tableViewDataSource和Delegate
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return self.themeList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeViewCell
+        cell.titleLabel.text = self.themeList[indexPath.row].name
         return cell
     }
     

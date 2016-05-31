@@ -9,14 +9,13 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-
         
         let homeViewController = HomeViewController()
         let homeNav = UINavigationController(rootViewController: homeViewController)
@@ -25,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sideNav = UINavigationController(rootViewController: sideViewController)
         
         let revealViewController = SWRevealViewController(rearViewController: sideNav, frontViewController: homeNav)
+        revealViewController.delegate = self
         
-        window?.rootViewController = revealViewController;
+        window?.rootViewController = revealViewController
         self.window?.makeKeyAndVisible()
         
         return true
@@ -53,7 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    //    - (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position
+    //    {
+    //    NSString *str = nil;
+    //    if ( position == FrontViewPositionLeft ) str = @"FrontViewPositionLeft";
+    //    if ( position == FrontViewPositionRight ) str = @"FrontViewPositionRight";
+    //    if ( position == FrontViewPositionRightMost ) str = @"FrontViewPositionRightMost";
+    //    if ( position == FrontViewPositionRightMostRemoved ) str = @"FrontViewPositionRightMostRemoved";
+    //    return str;
+    //    }
 
 }
 

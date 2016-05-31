@@ -133,22 +133,6 @@ class DailyNetHelper : MLNetWork {
             if let body = response["body"].string {
                 let css = response["css"][0].stringValue
                 
-//                if let image = response["image"].string {
-//                    if let titleString = response["title"].string {
-//                        if let imageSource = response["image_source"].string {
-//                            self.loadParallaxHeader(image, imageSource: imageSource, titleString: titleString)
-//                        } else {
-//                            self.loadParallaxHeader(image, imageSource: "(null)", titleString: titleString)
-//                        }
-//                        self.setNeedsStatusBarAppearanceUpdate()
-//                    }
-//                } else {
-//                    self.hasImage = false
-//                    self.setNeedsStatusBarAppearanceUpdate()
-//                    self.statusBarBackground.backgroundColor = UIColor.whiteColor()
-//                    self.loadNormalHeader()
-//                }
-                
                 var html = "<html>"
                 html += "<head>"
                 html += "<link rel=\"stylesheet\" href="
@@ -161,12 +145,6 @@ class DailyNetHelper : MLNetWork {
                 
                 return Promise(html)
             } else {
-//                //若是直接使用share_url的类型
-//                self.hasImage = false
-//                self.setNeedsStatusBarAppearanceUpdate()
-//                self.statusBarBackground.backgroundColor = UIColor.whiteColor()
-//                self.loadNormalHeader()
-                
                 let url = response["share_url"].stringValue
                 return Promise(url)
             }
