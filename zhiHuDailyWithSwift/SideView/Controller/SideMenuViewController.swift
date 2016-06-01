@@ -10,7 +10,7 @@ import UIKit
 
 class SideMenuViewController: UIViewController {
 
-    let identifier = "SideMenuViewCell"
+    let identifier = "SideMenuCell"
     var tableView: UITableView!
     var blurView: MLGradientView!
     private var themeList: [ThemeModel] = []
@@ -32,6 +32,7 @@ class SideMenuViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 50.5
+        tableView.registerNib(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: identifier)
         
         blurView = MLGradientView(frame: CGRect(x: 0, y: ScreenHeight - 45 - 50 , width: ScreenWidth, height: 50), type: .TransparentOther)
         view.backgroundColor = UIColor(red: 19/255.0, green: 26/255.0, blue: 32/255.0)
@@ -60,13 +61,18 @@ class SideMenuViewController: UIViewController {
 
 //tableViewDataSource和Delegate
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.themeList.count
+        guard themeList.count > 0 else {
+            return 0
+        }
+        return themeList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! HomeViewCell
-        cell.titleLabel.text = self.themeList[indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! SideMenuCell
+        let isShowLeftIcon = indexPath.row == 0 ? true : false;
+        cell.congfigSileMenu(self.themeList[indexPath.row].name, showLeftIcon: isShowLeftIcon)
         return cell
     }
     

@@ -2,21 +2,34 @@
 //  SideMenuCell.swift
 //  zhiHuDailyWithSwift
 //
-//  Created by moLiang on 16/5/24.
+//  Created by moLiang on 16/6/1.
 //  Copyright © 2016年 moliang. All rights reserved.
 //
 
 import UIKit
+import SnapKit
 
 class SideMenuCell: UITableViewCell {
+
+    @IBOutlet weak var rightImageView: UIImageView!
     
-    var leftImageView: UIImageView!
-    var rightImageView: UIImageView!
-    var contentTitleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var leftImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func congfigSileMenu(text: String, showLeftIcon: Bool) {
+        contentLabel.text = text;
+        leftImageView.hidden = !showLeftIcon
+        if showLeftIcon {
+            contentLabel.snp_makeConstraints(closure: { (make) in
+                make.left.equalTo(self.snp_left).offset(10);
+            })
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -24,5 +37,5 @@ class SideMenuCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
