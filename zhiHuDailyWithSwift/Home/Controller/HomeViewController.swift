@@ -12,9 +12,9 @@ import Kingfisher
 
 class HomeViewController: UIViewController{
     
-    private var tableView: UITableView!
-    private var homeStoryModel: HomeStoryModel!
-    private var cycleScrollView: MLCycleScrollView!
+    weak var tableView: UITableView!
+    var homeStoryModel: HomeStoryModel!
+    weak var cycleScrollView: MLCycleScrollView!
     let identifier = "homeViewCell"
     
     override func viewDidLoad() {

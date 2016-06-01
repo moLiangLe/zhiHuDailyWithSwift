@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		206DFC1147A1ECA49D7351FD /* Pods_zhiHuDailyWithSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAEEC2946AC356927CD2B65 /* Pods_zhiHuDailyWithSwift.framework */; };
+		670AC5301CFF1BF700B3A4F6 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670AC52F1CFF1BF700B3A4F6 /* ThemeViewController.swift */; };
+		67322B751CFF1CED00276F15 /* ThemeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67322B731CFF1CED00276F15 /* ThemeViewCell.swift */; };
+		67322B761CFF1CED00276F15 /* ThemeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67322B741CFF1CED00276F15 /* ThemeViewCell.xib */; };
 		6771455B1CE376FA000E1ACD /* MLCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6771455A1CE376FA000E1ACD /* MLCycleScrollView.swift */; };
 		6799D6AE1CEB564D00013A6A /* MLNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6799D6AD1CEB564D00013A6A /* MLNetWork.swift */; };
 		67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3B6B01CF1E4B200128356 /* MLGradientView.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		1F15A9EF4E9ED1E0DAA144DB /* Pods-zhiHuDailyWithSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhiHuDailyWithSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zhiHuDailyWithSwift/Pods-zhiHuDailyWithSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		2EAEEC2946AC356927CD2B65 /* Pods_zhiHuDailyWithSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zhiHuDailyWithSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		670AC52F1CFF1BF700B3A4F6 /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		67322B731CFF1CED00276F15 /* ThemeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewCell.swift; sourceTree = "<group>"; };
+		67322B741CFF1CED00276F15 /* ThemeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeViewCell.xib; sourceTree = "<group>"; };
 		6771455A1CE376FA000E1ACD /* MLCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLCycleScrollView.swift; sourceTree = "<group>"; };
 		6799D6AD1CEB564D00013A6A /* MLNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLNetWork.swift; sourceTree = "<group>"; };
 		67C3B6B01CF1E4B200128356 /* MLGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLGradientView.swift; sourceTree = "<group>"; };
@@ -418,6 +424,7 @@
 		7EB2B2671CFD704300A2DD1C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				670AC52F1CFF1BF700B3A4F6 /* ThemeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -432,6 +439,8 @@
 		7EB2B2691CFD704300A2DD1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				67322B731CFF1CED00276F15 /* ThemeViewCell.swift */,
+				67322B741CFF1CED00276F15 /* ThemeViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -506,6 +515,7 @@
 			files = (
 				7E8BCBF61CEC581D005E5C12 /* HomeViewCell.xib in Resources */,
 				67CDC84A1CE369E6006BB24B /* LaunchScreen.storyboard in Resources */,
+				67322B761CFF1CED00276F15 /* ThemeViewCell.xib in Resources */,
 				67CDC8471CE369E6006BB24B /* Assets.xcassets in Resources */,
 				7E116DD01CFEB875002FCE70 /* SideMenuCell.xib in Resources */,
 			);
@@ -596,6 +606,7 @@
 				7E68D0191CF5402C00ED145D /* UIGestureRecognizerExection.swift in Sources */,
 				67D4EF8C1CE4BAEB00DF4E6C /* UIViewExtension.swift in Sources */,
 				7E116DCF1CFEB875002FCE70 /* SideMenuCell.swift in Sources */,
+				670AC5301CFF1BF700B3A4F6 /* ThemeViewController.swift in Sources */,
 				67EC3A9E1CF7F08F009B074B /* NSAttributedStringExtension.swift in Sources */,
 				67D4EF861CE4BAEB00DF4E6C /* UIButtonExtension.swift in Sources */,
 				7E8BCBF51CEC581D005E5C12 /* HomeViewCell.swift in Sources */,
@@ -604,6 +615,7 @@
 				67D4EF601CE4B9FA00DF4E6C /* HomeViewController.swift in Sources */,
 				67EC3AA01CF821FB009B074B /* UIFontExtension.swift in Sources */,
 				7EF80B701CF43F320062B0D1 /* UIDeviceExtension.swift in Sources */,
+				67322B751CFF1CED00276F15 /* ThemeViewCell.swift in Sources */,
 				7EB2B2631CFD42A900A2DD1C /* NSDateExtension.swift in Sources */,
 				7EE6008B1CED6D12006AA928 /* MLDotView.swift in Sources */,
 				7EE6008D1CED9113006AA928 /* MLPageControl.swift in Sources */,
