@@ -25,7 +25,7 @@ class SideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: view.bounds, style: .Plain)
+        tableView = UITableView(frame: self.view.bounds, style: .Plain)
         self.tableView.backgroundColor = UIColor(red: 19/255.0, green: 26/255.0, blue: 32/255.0)
         self.tableView.separatorStyle = .None
         self.tableView.showsVerticalScrollIndicator = false
@@ -33,10 +33,11 @@ class SideMenuViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = 50.5
         tableView.registerNib(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: identifier)
+        self.view.addSubview(tableView)
+        
         
         blurView = MLGradientView(frame: CGRect(x: 0, y: ScreenHeight - 45 - 50 , width: ScreenWidth, height: 50), type: .TransparentOther)
         view.backgroundColor = UIColor(red: 19/255.0, green: 26/255.0, blue: 32/255.0)
-        
         loadData()
     }
     
@@ -71,8 +72,7 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! SideMenuCell
-        let isShowLeftIcon = indexPath.row == 0 ? true : false;
-        cell.congfigSileMenu(self.themeList[indexPath.row].name, showLeftIcon: isShowLeftIcon)
+        cell.congfigSileMenu(self.themeList[indexPath.row].name, indexPath: indexPath)
         return cell
     }
     

@@ -28,7 +28,7 @@ class HomeViewController: UIViewController{
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
         
-        tableView = UITableView(frame:CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: .Plain)
+        tableView = UITableView(frame:self.view.bounds, style: .Plain)
         tableView.registerNib(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: identifier)
         self.edgesForExtendedLayout = UIRectEdge.Top
         tableView.dataSource = self

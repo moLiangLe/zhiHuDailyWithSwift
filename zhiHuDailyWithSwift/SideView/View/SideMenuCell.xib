@@ -22,14 +22,14 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="9Q2-B6-7wh">
-                        <rect key="frame" x="10" y="12" width="20" height="20"/>
+                        <rect key="frame" x="15" y="12" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Hmi-eB-EBl"/>
                             <constraint firstAttribute="width" constant="20" id="Rsn-qG-Vwz"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-S3-dJr">
-                        <rect key="frame" x="40" y="11" width="232" height="21"/>
+                        <rect key="frame" x="45" y="11" width="227" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                     <constraint firstItem="UXQ-z6-8ab" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SDx-M5-2SA"/>
                     <constraint firstItem="UXQ-z6-8ab" firstAttribute="leading" secondItem="7Dy-S3-dJr" secondAttribute="trailing" constant="10" id="g09-P8-Tse"/>
                     <constraint firstItem="7Dy-S3-dJr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h3v-Kw-P3P"/>
-                    <constraint firstItem="9Q2-B6-7wh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="j52-wa-qlu"/>
+                    <constraint firstItem="9Q2-B6-7wh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="j52-wa-qlu"/>
                     <constraint firstAttribute="trailing" secondItem="UXQ-z6-8ab" secondAttribute="trailing" constant="18" id="uvn-1R-efD"/>
                 </constraints>
             </tableViewCellContentView>
