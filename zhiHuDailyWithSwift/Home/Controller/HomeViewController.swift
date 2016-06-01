@@ -33,6 +33,7 @@ class HomeViewController: UIViewController{
         self.edgesForExtendedLayout = UIRectEdge.Top
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 90;
         self.view.addSubview(tableView)
         
         cycleScrollView = MLCycleScrollView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 154))
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController{
         cycleScrollView.titleLabelBackgroundColor = UIColor.clearColor()
         cycleScrollView.titleLabelHeight = 60
         cycleScrollView.titleLabelAlpha = 1
-        
         
         //将ParallaxView设置为tableHeaderView
         self.tableView.tableHeaderView = cycleScrollView
@@ -89,10 +89,6 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate,MLCycl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80;
     }
     
     func cycleScrollView(cycleScrollView: MLCycleScrollView, didSelectItemAtIndex index:NSInteger) {

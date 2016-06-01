@@ -16,6 +16,10 @@ class HomeViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let btmLine = UIView(frame: CGRectMake(15, 89, UIScreen.mainScreen().bounds.width - 30, 1))
+        btmLine.backgroundColor = UIColor(red: 228/255.0, green: 228/255.0, blue: 228/255.0, alpha: 1)
+        self.contentView.addSubview(btmLine)
         // Initialization code
     }
 

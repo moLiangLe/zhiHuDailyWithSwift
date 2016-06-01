@@ -35,7 +35,6 @@ class SideMenuViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "SideMenuCell", bundle: nil), forCellReuseIdentifier: identifier)
         self.view.addSubview(tableView)
         
-        
         blurView = MLGradientView(frame: CGRect(x: 0, y: ScreenHeight - 45 - 50 , width: ScreenWidth, height: 50), type: .TransparentOther)
         view.backgroundColor = UIColor(red: 19/255.0, green: 26/255.0, blue: 32/255.0)
         loadData()
