@@ -37,6 +37,7 @@
 		6787635E1D11046400C9DD65 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763451D11046400C9DD65 /* UITableViewExtension.swift */; };
 		6787635F1D11046400C9DD65 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763461D11046400C9DD65 /* UITextFieldExtension.swift */; };
 		678763601D11046400C9DD65 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763471D11046400C9DD65 /* UIViewExtension.swift */; };
+		678763641D11460400C9DD65 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763631D11460400C9DD65 /* LaunchViewController.swift */; };
 		6799D6AE1CEB564D00013A6A /* MLNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6799D6AD1CEB564D00013A6A /* MLNetWork.swift */; };
 		67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3B6B01CF1E4B200128356 /* MLGradientView.swift */; };
 		67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDC83F1CE369E6006BB24B /* AppDelegate.swift */; };
@@ -92,6 +93,7 @@
 		678763451D11046400C9DD65 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		678763461D11046400C9DD65 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		678763471D11046400C9DD65 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		678763631D11460400C9DD65 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		6799D6AD1CEB564D00013A6A /* MLNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLNetWork.swift; sourceTree = "<group>"; };
 		67C3B6B01CF1E4B200128356 /* MLGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLGradientView.swift; sourceTree = "<group>"; };
 		67CDC83C1CE369E6006BB24B /* zhiHuDailyWithSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhiHuDailyWithSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,22 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		678763611D1145EF00C9DD65 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				678763621D1145EF00C9DD65 /* Controller */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		678763621D1145EF00C9DD65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				678763631D11460400C9DD65 /* LaunchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6799D6AC1CEB563A00013A6A /* MLNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +300,7 @@
 				67D4EF5C1CE4B9AA00DF4E6C /* Home */,
 				67F7A1FB1CF3452A00F7F950 /* SideView */,
 				7EB2B2661CFD701200A2DD1C /* Theme */,
+				678763611D1145EF00C9DD65 /* Launch */,
 				67CDC83F1CE369E6006BB24B /* AppDelegate.swift */,
 				67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */,
 				67CDC8461CE369E6006BB24B /* Assets.xcassets */,
@@ -601,6 +620,7 @@
 				6787634B1D11046400C9DD65 /* NSObjectExtension.swift in Sources */,
 				678763601D11046400C9DD65 /* UIViewExtension.swift in Sources */,
 				67E268131CFC6469000C0012 /* ParallaxHeaderView.swift in Sources */,
+				678763641D11460400C9DD65 /* LaunchViewController.swift in Sources */,
 				678763491D11046400C9DD65 /* NSDateExtension.swift in Sources */,
 				7E9DDF521CEB0B1000ACE1CD /* StoryModel.swift in Sources */,
 				7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */,

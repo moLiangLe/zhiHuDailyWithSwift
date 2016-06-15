@@ -74,9 +74,9 @@ class DailyNetHelper : MLNetWork {
     }
     
     //获取下一次所需的启动页数据
-    class func asyncGetLaunchImage(){
+    class func asyncGetLaunchImage() -> Promise<Void>{
         //下载下一次所需的启动页数据
-        getJSON("http://news-at.zhihu.com/api/4/start-image/1080*1776", parameters: [:])
+        return getJSON("http://news-at.zhihu.com/api/4/start-image/1080*1776", parameters: [:])
             .then{ response -> Promise<String> in
             //拿到text并保存
             let text = response["text"].stringValue
@@ -85,7 +85,7 @@ class DailyNetHelper : MLNetWork {
             return Promise(launchImageURL)
             }
             .then{ launchImageURL -> Promise<NSData> in
-                return getData(launchImageURL, parameters: [:])
+                return getData(launchImageURL)
             }
             .then{ response -> Promise<Void> in
                 let imgData = response;

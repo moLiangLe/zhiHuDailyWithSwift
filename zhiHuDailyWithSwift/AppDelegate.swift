@@ -7,29 +7,17 @@
 //
 
 import UIKit
-import DrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let homeViewController = HomeViewController()
-        let homeNav = UINavigationController(rootViewController: homeViewController)
-        
-        let sideViewController = SideMenuViewController()
-        let sideNav = UINavigationController(rootViewController: sideViewController)
-        
-        let drawerController = DrawerController(centerViewController: homeNav, leftDrawerViewController: sideNav)
-        drawerController.maximumLeftDrawerWidth = 100;
-        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
-        drawerController.closeDrawerGestureModeMask = .All
-        
-        window?.rootViewController = drawerController
+        let launchViewController = LaunchViewController()
+        window?.rootViewController = launchViewController;
         self.window?.makeKeyAndVisible()
         
         return true
