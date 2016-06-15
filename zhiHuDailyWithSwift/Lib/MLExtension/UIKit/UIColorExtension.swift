@@ -217,4 +217,20 @@ extension UIColor {
         let alpha = randomAlpha ? CGFloat.random() : 1.0
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: alpha)
     }
+    
+    public static func createImageWithColor(color:UIColor) -> UIImage{
+        return createImageWithColor(color, size: CGSizeMake(1, 1))
+    }
+    
+    public static func createImageWithColor(color:UIColor,size:CGSize) -> UIImage {
+        let rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContext(rect.size);
+        let context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, color.CGColor);
+        CGContextFillRect(context, rect);
+        
+        let theImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return theImage;
+    }
 }
