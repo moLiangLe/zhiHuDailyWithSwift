@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import DrawerController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -23,10 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
         let sideViewController = SideMenuViewController()
         let sideNav = UINavigationController(rootViewController: sideViewController)
         
-        let revealViewController = SWRevealViewController(rearViewController: sideNav, frontViewController: homeNav)
-        revealViewController.delegate = self
+        let drawerController = DrawerController(centerViewController: homeNav, leftDrawerViewController: sideNav)
+        drawerController.maximumLeftDrawerWidth = 100;
+        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
+        drawerController.closeDrawerGestureModeMask = .All
         
-        window?.rootViewController = revealViewController
+        window?.rootViewController = drawerController
         self.window?.makeKeyAndVisible()
         
         return true

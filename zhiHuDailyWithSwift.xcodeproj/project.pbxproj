@@ -46,13 +46,11 @@
 		67D4EF901CE4BFD900DF4E6C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D4EF8F1CE4BFD900DF4E6C /* GlobalVariables.swift */; };
 		67E268131CFC6469000C0012 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E268121CFC6469000C0012 /* ParallaxHeaderView.swift */; };
 		67E268151CFC6BA5000C0012 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E268141CFC6BA5000C0012 /* Accelerate.framework */; };
-		67E268221CFC8290000C0012 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E268211CFC8290000C0012 /* SWRevealViewController.m */; };
 		67F7A2011CF345A200F7F950 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7A2001CF345A200F7F950 /* SideMenuViewController.swift */; };
 		7E116DCF1CFEB875002FCE70 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E116DCD1CFEB875002FCE70 /* SideMenuCell.swift */; };
 		7E116DD01CFEB875002FCE70 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E116DCE1CFEB875002FCE70 /* SideMenuCell.xib */; };
 		7E11EAA01CE99F4B00F41C3D /* MLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */; };
 		7E8BCBF51CEC581D005E5C12 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BCBF31CEC581D005E5C12 /* HomeViewCell.swift */; };
-		7E8BCBF61CEC581D005E5C12 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8BCBF41CEC581D005E5C12 /* HomeViewCell.xib */; };
 		7E9DDF4C1CEAF46900ACE1CD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */; };
 		7E9DDF521CEB0B1000ACE1CD /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */; };
 		7EB2B2611CFD3FB800A2DD1C /* DailyNetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB2B2601CFD3FB800A2DD1C /* DailyNetHelper.swift */; };
@@ -113,7 +111,6 @@
 		7E116DCE1CFEB875002FCE70 /* SideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		7E11EA9F1CE99F4B00F41C3D /* MLBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLBaseViewModel.swift; sourceTree = "<group>"; };
 		7E8BCBF31CEC581D005E5C12 /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
-		7E8BCBF41CEC581D005E5C12 /* HomeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		7E9DDF4B1CEAF46900ACE1CD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7E9DDF511CEB0B1000ACE1CD /* StoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		7EB2B2601CFD3FB800A2DD1C /* DailyNetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNetHelper.swift; sourceTree = "<group>"; };
@@ -318,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				7E8BCBF31CEC581D005E5C12 /* HomeViewCell.swift */,
-				7E8BCBF41CEC581D005E5C12 /* HomeViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,7 +523,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E8BCBF61CEC581D005E5C12 /* HomeViewCell.xib in Resources */,
 				67CDC84A1CE369E6006BB24B /* LaunchScreen.storyboard in Resources */,
 				67322B761CFF1CED00276F15 /* ThemeViewCell.xib in Resources */,
 				67CDC8471CE369E6006BB24B /* Assets.xcassets in Resources */,
@@ -591,7 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE600891CED62C3006AA928 /* MLCollectionViewCell.swift in Sources */,
-				67E268221CFC8290000C0012 /* SWRevealViewController.m in Sources */,
 				67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */,
 				678763481D11046400C9DD65 /* NSAttributedStringExtension.swift in Sources */,
 				678763531D11046400C9DD65 /* StringExtension.swift in Sources */,

@@ -12,25 +12,18 @@ import Kingfisher
 
 class HomeViewController: UIViewController{
     
-    weak var tableView: UITableView!
+    var tableView: UITableView!
     var homeStoryModel: HomeStoryModel!
-    weak var cycleScrollView: MLCycleScrollView!
-    let identifier = "homeViewCell"
+    var cycleScrollView: MLCycleScrollView!
+    let identifier = "homeViewCellIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "今日热闻"
         
-        //创建leftBarButtonItem以及添加手势识别
-        let leftButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .Plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
-        leftButton.tintColor = UIColor.whiteColor()
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        self.navigationItem.setLeftBarButtonItem(leftButton, animated: false)
-        
-        tableView = UITableView(frame:self.view.bounds, style: .Plain)
-        tableView.registerNib(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: identifier)
         self.edgesForExtendedLayout = UIRectEdge.Top
+        tableView = UITableView(frame:self.view.bounds, style: .Plain)
+        tableView.registerClass(HomeViewCell.self, forCellReuseIdentifier: identifier);
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 90;
