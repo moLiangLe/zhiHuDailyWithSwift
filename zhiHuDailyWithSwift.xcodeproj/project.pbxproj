@@ -39,6 +39,7 @@
 		678763601D11046400C9DD65 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763471D11046400C9DD65 /* UIViewExtension.swift */; };
 		678763641D11460400C9DD65 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678763631D11460400C9DD65 /* LaunchViewController.swift */; };
 		6799D6AE1CEB564D00013A6A /* MLNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6799D6AD1CEB564D00013A6A /* MLNetWork.swift */; };
+		67B27F711D12515300A04C4A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B27F701D12515300A04C4A /* ContentViewController.swift */; };
 		67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3B6B01CF1E4B200128356 /* MLGradientView.swift */; };
 		67CDC8401CE369E6006BB24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDC83F1CE369E6006BB24B /* AppDelegate.swift */; };
 		67CDC8471CE369E6006BB24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67CDC8461CE369E6006BB24B /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		678763471D11046400C9DD65 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		678763631D11460400C9DD65 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		6799D6AD1CEB564D00013A6A /* MLNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLNetWork.swift; sourceTree = "<group>"; };
+		67B27F701D12515300A04C4A /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		67C3B6B01CF1E4B200128356 /* MLGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLGradientView.swift; sourceTree = "<group>"; };
 		67CDC83C1CE369E6006BB24B /* zhiHuDailyWithSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhiHuDailyWithSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CDC83F1CE369E6006BB24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,38 @@
 			path = MLNetWork;
 			sourceTree = "<group>";
 		};
+		67B27F6E1D12513500A04C4A /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				67B27F721D1256AF00A04C4A /* Model */,
+				67B27F731D1256AF00A04C4A /* View */,
+				67B27F6F1D12513500A04C4A /* Controller */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		67B27F6F1D12513500A04C4A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67B27F701D12515300A04C4A /* ContentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67B27F721D1256AF00A04C4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67B27F731D1256AF00A04C4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		67C3B6AF1CF1E48B00128356 /* MLGradientView */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +330,7 @@
 		67CDC83E1CE369E6006BB24B /* zhiHuDailyWithSwift */ = {
 			isa = PBXGroup;
 			children = (
+				67B27F6E1D12513500A04C4A /* Content */,
 				677145561CE374DF000E1ACD /* Lib */,
 				67D4EF5C1CE4B9AA00DF4E6C /* Home */,
 				67F7A1FB1CF3452A00F7F950 /* SideView */,
@@ -606,6 +641,7 @@
 			files = (
 				7EE600891CED62C3006AA928 /* MLCollectionViewCell.swift in Sources */,
 				67C3B6B11CF1E4B200128356 /* MLGradientView.swift in Sources */,
+				67B27F711D12515300A04C4A /* ContentViewController.swift in Sources */,
 				678763481D11046400C9DD65 /* NSAttributedStringExtension.swift in Sources */,
 				678763531D11046400C9DD65 /* StringExtension.swift in Sources */,
 				6787635F1D11046400C9DD65 /* UITextFieldExtension.swift in Sources */,

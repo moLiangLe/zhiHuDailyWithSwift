@@ -10,23 +10,13 @@ import Foundation
 
 struct HomeStoryModel {
     let topStories: [TopStoryModel]
-    var contentStories: [ContentStoryModel]
-    
-    init (topStories: [TopStoryModel], contentStories: [ContentStoryModel]) {
-        self.topStories = topStories
-        self.contentStories = contentStories
-    }
+    let contentStories: [ContentStoryModel]
 }
 
 struct TopStoryModel {
-    var image: String
-    var id: String
-    var title: String
-    init (image: String, id: String, title: String) {
-        self.image = image
-        self.id = id
-        self.title = title
-    }
+    let image: String
+    let id: String
+    let title: String
 }
 
 protocol PastContentStoryItem {
@@ -34,45 +24,36 @@ protocol PastContentStoryItem {
 }
 
 struct ContentStoryModel: PastContentStoryItem {
-    var images: [String]
-    var id: String
-    var title: String
-    init (images: [String], id: String, title: String) {
-        self.images = images
-        self.id = id
-        self.title = title
-    }
+    let images: [String]
+    let id: String
+    let title: String
 }
 
 struct DateHeaderModel:PastContentStoryItem {
-    var date: String
-    init (dateString: String) {
-        self.date = dateString
-    }
+    let date: String
 }
 
 struct ThemeModel {
-    var id: String
-    var name: String
-    init (id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
+    let id: String
+    let name: String
 }
 
 struct ThemeContentModel {
-    var stories: [ContentStoryModel]
-    var background: String
-    var editorsAvatars: [String]
-    init (stories: [ContentStoryModel], background: String, editorsAvatars: [String]) {
-        self.stories = stories
-        self.background = background
-        self.editorsAvatars = editorsAvatars
-    }
+    let stories: [ContentStoryModel]
+    let background: String
+    let editorsAvatars: [String]
 }
 
 struct Keys {
     static let launchImgKey = "launchImgKey"
     static let launchTextKey = "launchTextKey"
     static let readNewsId = "readNewsId"
+}
+
+struct ContentModel {
+    let image: String?
+    let titleString: String?
+    let imageSource: String?
+    let contentHtml: String?
+    let shareUrl: String?
 }

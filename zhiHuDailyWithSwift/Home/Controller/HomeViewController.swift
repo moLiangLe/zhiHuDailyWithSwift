@@ -42,7 +42,13 @@ class HomeViewController: UIViewController{
         //将ParallaxView设置为tableHeaderView
         self.tableView.tableHeaderView = cycleScrollView
         
-        loadData()
+        if self.homeStoryModel.topStories.count > 0 {
+            for item in self.homeStoryModel.topStories {
+                self.cycleScrollView.imagePathsGroup.append(item.image)
+                self.cycleScrollView.titlesGroup.append(item.title)
+            }
+        }
+        //loadData()
     }
     
     func loadData(){
@@ -81,7 +87,13 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate,MLCycl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if indexPath.row < homeStoryModel.contentStories.count {
+            let contentStory =  homeStoryModel.contentStories[indexPath.row];
+            let contentVc = ContentViewController()
+            contentVc.index = indexPath.row
+            contentVc.newsId = contentStory.id
+            navigationController?.pushViewController(contentVc, animated: true)
+        }
     }
     
     func cycleScrollView(cycleScrollView: MLCycleScrollView, didSelectItemAtIndex index:NSInteger) {

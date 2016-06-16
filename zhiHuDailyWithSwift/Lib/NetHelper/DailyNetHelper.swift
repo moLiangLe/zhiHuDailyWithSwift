@@ -126,12 +126,15 @@ class DailyNetHelper : MLNetWork {
         }
     }
     
-    class func asyncGetNextNews(newsID: String) -> Promise<String>{
-        return getJSON("http://news-at.zhihu.com/api/4/news/\(newsID)", parameters: [:]).then { response -> Promise<String> in
+    class func asyncGetNextNews(newsID: String) -> Promise<ContentModel>{
+        return getJSON("http://news-at.zhihu.com/api/4/news/\(newsID)", parameters: [:]).then { response -> Promise<ContentModel> in
 
             //若body存在 拼接body与css后加载
             if let body = response["body"].string {
                 let css = response["css"][0].stringValue
+                let image = response["image"].string
+                let titleString = response["title"].string
+                let imageSource = response["image_source"].string
                 
                 var html = "<html>"
                 html += "<head>"
@@ -143,10 +146,13 @@ class DailyNetHelper : MLNetWork {
                 html += "</body>"
                 html += "</html>"
                 
-                return Promise(html)
+                let contentModel = ContentModel(image: image, titleString: titleString, imageSource: imageSource, contentHtml: html, shareUrl: nil)
+                return Promise(contentModel)
             } else {
+                //若是直接使用share_url的类型
                 let url = response["share_url"].stringValue
-                return Promise(url)
+                let contentModel = ContentModel(image: nil, titleString: nil, imageSource: nil, contentHtml: nil, shareUrl: url)
+                return Promise(contentModel)
             }
         }
     }

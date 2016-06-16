@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import DrawerController
+import PromiseKit
 
 class LaunchViewController: UIViewController {
     
@@ -29,22 +30,25 @@ class LaunchViewController: UIViewController {
             launchImageView.image = UIImage(named: "DemoLaunchImage")
         }
         
-        DailyNetHelper.asyncGetLaunchImage().then{ _ -> Void in
-            
-            let homeViewController = HomeViewController()
-            let homeNav = UINavigationController(rootViewController: homeViewController)
-            
-            let sideViewController = SideMenuViewController()
-            let sideNav = UINavigationController(rootViewController: sideViewController)
-            
-            let drawerController = DrawerController(centerViewController: homeNav, leftDrawerViewController: sideNav)
-            drawerController.maximumLeftDrawerWidth = 100;
-            drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
-            drawerController.closeDrawerGestureModeMask = .All
-            
-            if let window = UIApplication.sharedApplication().delegate?.window {
-                window?.rootViewController = drawerController;
-            }
+        DailyNetHelper.asyncGetLaunchImage()
+            .then{ _ -> Promise<HomeStoryModel> in
+                DailyNetHelper.asyncGetArticles(dataOfDate: NSDate().dateByAddingTimeInterval(28800 - Double(0) * 86400))
+            }.then { homeStoryModel -> Void in
+                let homeViewController = HomeViewController()
+                let homeNav = UINavigationController(rootViewController: homeViewController)
+                homeViewController.homeStoryModel = homeStoryModel
+                
+                let sideViewController = SideMenuViewController()
+                let sideNav = UINavigationController(rootViewController: sideViewController)
+                
+                let drawerController = DrawerController(centerViewController: homeNav, leftDrawerViewController: sideNav)
+                drawerController.maximumLeftDrawerWidth = 203;
+                drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
+                drawerController.closeDrawerGestureModeMask = .All
+                
+                if let window = UIApplication.sharedApplication().delegate?.window {
+                    window?.rootViewController = drawerController;
+                }
         }
     }
     
@@ -76,16 +80,5 @@ class LaunchViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
